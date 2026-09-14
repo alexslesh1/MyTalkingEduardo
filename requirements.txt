@@ -1,0 +1,19 @@
+# DeepSeek API (OpenAI-совместимый клиент)
+openai>=1.30.0
+
+# HTTP-запросы к wttr.in
+requests>=2.31.0
+
+# Офлайн-распознавание речи
+vosk>=0.3.45
+sounddevice>=0.4.6
+
+# Запасной вариант распознавания речи (Google Web Speech API)
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.13
+
+# Чтение переменных окружения из .env (удобно при разработке)
+python-dotenv>=1.0.0
+
+# Тесты
+pytest>=8.0.0
