@@ -1,0 +1,19 @@
+# Опциональный офлайн-режим распознавания речи (Vosk).
+#
+# ВАЖНО: пакет `vosk` на PyPI НЕ публикует wheel для macOS Apple Silicon
+# (arm64) — только для Intel Mac (x86_64), Linux и Windows. На M1/M2/M3
+# `pip install -r requirements-vosk.txt` завершится ошибкой
+# "No matching distribution found for vosk", если venv создан обычным
+# способом (arm64-интерпретатором).
+#
+# Если у вас Apple Silicon — просто не устанавливайте этот файл: ассистент
+# автоматически определит отсутствие Vosk и перейдёт на запасной онлайн-режим
+# (Google Web Speech API из requirements.txt). Никакой ручной настройки не
+# требуется.
+#
+# Если офлайн-режим обязателен на Apple Silicon, ставьте зависимости через
+# Rosetta 2 (см. README.md, раздел "Офлайн-режим Vosk на Apple Silicon"):
+#   arch -x86_64 pip install -r requirements-vosk.txt
+
+vosk>=0.3.32
+sounddevice>=0.4.6

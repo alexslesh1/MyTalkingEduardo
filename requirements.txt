@@ -1,19 +1,22 @@
+# Базовые зависимости — нужны в любом случае.
+
 # DeepSeek API (OpenAI-совместимый клиент)
 openai>=1.30.0
 
 # HTTP-запросы к wttr.in
 requests>=2.31.0
 
-# Офлайн-распознавание речи
-vosk>=0.3.45
-sounddevice>=0.4.6
-
-# Запасной вариант распознавания речи (Google Web Speech API)
-SpeechRecognition>=3.10.0
-PyAudio>=0.2.13
-
 # Чтение переменных окружения из .env (удобно при разработке)
 python-dotenv>=1.0.0
 
 # Тесты
 pytest>=8.0.0
+
+# Запасной (онлайн) вариант распознавания речи — Google Web Speech API.
+# Работает на любом Mac, включая Apple Silicon.
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.13
+
+# Офлайн-распознавание речи (Vosk) — см. requirements-vosk.txt.
+# Вынесено в отдельный файл, т.к. пакет vosk на PyPI не публикует wheel
+# для Apple Silicon (M1/M2/M3): pip install без Rosetta там просто упадёт.
